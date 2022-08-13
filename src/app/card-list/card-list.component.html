@@ -1,0 +1,32 @@
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Meaning</th>
+  </tr>
+  <tr
+    *ngFor="let card of cards; let i = index"
+    (mouseover)="this.setHoveredWord(card.id)"
+    (mouseout)="this.setHoveredWord(null)"
+  >
+    <td>
+      <input
+        #word
+        type="text"
+        value="{{ card.id }}"
+        [disabled]="this.hoveredWord !== card.id"
+        (input)="editCard(i, { id: word.value, meaning: card.meaning })"
+      />
+    </td>
+    <td>
+      <input
+        #meaning
+        type="text"
+        value="{{ card.meaning }}"
+        [disabled]="this.hoveredWord !== card.id"
+        (input)="editCard(i, { id: card.id, meaning: meaning.value })"
+      />
+    </td>
+  </tr>
+</table>
+
+<button (click)="addCard()">+</button>

@@ -1,0 +1,13 @@
+<div *ngIf="currentCard">
+  <div>
+    {{ cards[currentCard].id }}
+  </div>
+
+  <div *ngIf="shouldShowMeaning">
+    {{ cards[currentCard].meaning }}
+  </div>
+
+  <button (click)="showMeaning()" *ngIf="!shouldShowMeaning">Flip</button>
+
+  <button (click)="advanceCard()">Next card</button>
+</div>
