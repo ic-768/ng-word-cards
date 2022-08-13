@@ -10,20 +10,18 @@
   >
     <td>
       <input
-        #word
         type="text"
         value="{{ card.id }}"
-        [disabled]="this.hoveredWord !== card.id"
-        (input)="editCard(i, { id: word.value, meaning: card.meaning })"
+        [disabled]="hoveredWord !== card.id"
+        (input)="editWord($event, i)"
       />
     </td>
     <td>
       <input
-        #meaning
         type="text"
         value="{{ card.meaning }}"
-        [disabled]="this.hoveredWord !== card.id"
-        (input)="editCard(i, { id: card.id, meaning: meaning.value })"
+        [disabled]="hoveredWord !== card.id"
+        (input)="editMeaning($event, i)"
       />
     </td>
   </tr>

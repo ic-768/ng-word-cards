@@ -31,4 +31,14 @@ export class CardListComponent implements OnInit {
   editCard(index: number, card: Card): void {
     this.cardsService.editCard(index, card);
   }
+
+  editMeaning(e: Event, i: number) {
+    const target = e.target as HTMLInputElement;
+    this.editCard(i, { ...this.cards[i], meaning: target.value });
+  }
+
+  editWord(e: Event, i: number) {
+    const target = e.target as HTMLInputElement;
+    this.editCard(i, { ...this.cards[i], id: target.value });
+  }
 }
