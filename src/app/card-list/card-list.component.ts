@@ -13,10 +13,10 @@ export class CardListComponent implements OnInit {
   ngOnInit(): void {}
 
   cards: Card[] = [];
-  hoveredWord: null | string = null;
+  hoveredWord: null | number = null;
 
-  setHoveredWord(word: null | string) {
-    this.hoveredWord = word;
+  setHoveredWord(index: null | number) {
+    this.hoveredWord = index;
   }
 
   constructor(private cardsService: CardsService) {
@@ -30,15 +30,5 @@ export class CardListComponent implements OnInit {
 
   editCard(index: number, card: Card): void {
     this.cardsService.editCard(index, card);
-  }
-
-  editMeaning(e: Event, i: number) {
-    const target = e.target as HTMLInputElement;
-    this.editCard(i, { ...this.cards[i], meaning: target.value });
-  }
-
-  editWord(e: Event, i: number) {
-    const target = e.target as HTMLInputElement;
-    this.editCard(i, { ...this.cards[i], id: target.value });
   }
 }

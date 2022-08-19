@@ -19,13 +19,8 @@ export class PracticeScreenComponent implements OnInit {
     this.currentCard = Math.floor(Math.random() * this.cards.length);
   }
 
-  showMeaning() {
-    this.shouldShowMeaning = true;
-  }
-
   advanceCard() {
     this.cards.splice(this.currentCard, 1);
-    if (this.shouldShowMeaning) this.shouldShowMeaning = false;
   }
 
   ngOnInit(): void {}

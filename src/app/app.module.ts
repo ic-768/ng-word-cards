@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { CardComponent } from './card/card.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { PracticeScreenComponent } from './practice-screen/practice-screen.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { PracticeScreenComponent } from './practice-screen/practice-screen.compo
     MenuComponent,
     CardComponent,
     CardListComponent,
-    PracticeScreenComponent
+    PracticeScreenComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

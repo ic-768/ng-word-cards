@@ -5,23 +5,24 @@
   </tr>
   <tr
     *ngFor="let card of cards; let i = index"
-    (mouseover)="this.setHoveredWord(card.id)"
+    (mouseover)="this.setHoveredWord(i)"
     (mouseout)="this.setHoveredWord(null)"
   >
     <td>
       <input
         type="text"
         value="{{ card.id }}"
-        [disabled]="hoveredWord !== card.id"
-        (input)="editWord($event, i)"
+        [disabled]="hoveredWord !== i"
+        (input)="setHoveredWord(i)"
+        [(ngModel)]="card.id"
       />
     </td>
     <td>
       <input
         type="text"
         value="{{ card.meaning }}"
-        [disabled]="hoveredWord !== card.id"
-        (input)="editMeaning($event, i)"
+        [disabled]="hoveredWord !== i"
+        [(ngModel)]="card.meaning"
       />
     </td>
   </tr>

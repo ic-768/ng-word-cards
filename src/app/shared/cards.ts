@@ -30,4 +30,9 @@ export const cards: Card[] = [
   { id: 'gruff', meaning: 'rough' },
   { id: 'petulant', meaning: 'insolent/rude' },
   { id: 'unscrupulous', meaning: 'immoral' },
+  {
+    id: 'ingratiate',
+    meaning:
+      'Bring into favor. e.g: "Ingratiate themselves with the community leaders"',
+  },
 ];
